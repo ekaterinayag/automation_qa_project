@@ -40,18 +40,15 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void InitContactModification(int index) {
-		click(By.xpath("//img[@alt='Edit']["+ index +"]"));
+		click(By.xpath("//table/tbody/tr[" + index + "]//img[@alt='Edit']"));
 	}
 
-    public void submitContactModification(int index) {
-    	click(By.name("update"));
-		//click(By.name("//input[@name='update'][@value='Update']"));
+    public void submitContactModification() {
+    	click(By.xpath("//input[@name='update'][@value='Update']"));
 	}
 
 	public void deleteContact() {
-		click(By.name("delete"));
-		//click(By.name("//input[@name='update'][@value='Delete']"));
-		
+		click(By.xpath("//input[@name='update'][@value='Delete']"));
 	}
 
 }
