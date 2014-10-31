@@ -1,10 +1,13 @@
 package com.example.fw;
 
+import java.util.List;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public abstract class HelperBase {
@@ -64,4 +67,12 @@ public abstract class HelperBase {
 	    	.selectByVisibleText(text);
 		}
 	}
+	public boolean findElements(By by) {
+	    try {
+	      driver.findElements(by);
+	      return true;
+	    } catch (NoSuchElementException e) {
+	      return false;
+	    }
+	  }
 }

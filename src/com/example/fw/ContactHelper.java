@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.scene.control.cell.CheckBoxTableCell;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
@@ -46,7 +47,7 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public void InitContactModification(int index) {
-		click(By.xpath("//table/tbody/tr[" + (index+2) + "]//img[@alt='Edit']"));
+		click(By.xpath("//table/tbody/tr["+ (index+2)+"]//img[@alt='Edit']"));
 	}
 
     public void submitContactModification() {
@@ -64,15 +65,14 @@ public class ContactHelper extends HelperBase {
 			ContactData contact = new ContactData();
 				contact.firstname = row.findElement(By.xpath(".//td[3]")).getText();
 				contact.lastname = row.findElement(By.xpath(".//td[2]")).getText();
-				contact.email1 = row.findElement(By.xpath(".//td[4]")).getText();
-				contact.home = row.findElement(By.xpath(".//td[5]")).getText();
-			contacts.add(contact);
+				contacts.add(contact);
 		}
 		return contacts;
 	}
 
 	private List<WebElement> getTableRows() {
-		return driver.findElements(By.xpath("//table/tbody/tr[@name='entry'][*]"));
+		return driver.findElements(By.xpath("//table//tr[@name='entry']"));
 	}
-	
+
+		
 }

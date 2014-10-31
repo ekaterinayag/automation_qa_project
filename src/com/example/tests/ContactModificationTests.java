@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 
 public class ContactModificationTests extends TestBase{
 
-	@Test
-	public void modifySomeContact() {
+	@Test (dataProvider = "randomValidContactGenerator")
+	public void modifySomeContact(ContactData contact) {
 		app.getNavigationHelper().openMainPage();
 		
 		//save old state
@@ -18,12 +18,7 @@ public class ContactModificationTests extends TestBase{
 	    
 	    //actions
 	    app.getContactHelper().InitContactModification(1);
-	    ContactData contact = new ContactData();
-	    contact.firstname = "3Val";
-		contact.lastname = "3Muller";
-		contact.home = "333";
-		contact.email1 = "kotobox@mail.ru";
-		app.getContactHelper().fillContactForm(contact);
+	   	app.getContactHelper().fillContactForm(contact);
 		app.getContactHelper().submitContactModification();
 		app.getContactHelper().returnToHomePage();
 		
