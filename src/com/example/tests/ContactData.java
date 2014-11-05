@@ -3,20 +3,20 @@ package com.example.tests;
 import org.openqa.selenium.WebElement;
 
 public class ContactData implements Comparable<ContactData> {
-	public String firstname;
-	public String lastname;
-	public String address1;
-	public String home;
-	public String mobile;
-	public String work;
-	public String email1;
-	public String email2;
-	public String bday;
-	public String bmonth;
-	public String byear;
+	private String firstname;
+	private String lastname;
+	private String address1;
+	private String home;
+	private String mobile;
+	private String work;
+	private String email1;
+	private String email2;
+	private String bday;
+	private String bmonth;
+	private String byear;
 	public String group;
-	public String address2;
-	public String phone2;
+	private String address2;
+	private String phone2;
 
 	public ContactData() {
 	}
@@ -100,6 +100,87 @@ public class ContactData implements Comparable<ContactData> {
 			}
 			return 0;
 			}
-		
+	
+	public ContactData withFirstName(String firstname) {
+		this.firstname = firstname;
+		return this;
+	}
+	public ContactData withLastName(String lastname) {
+		this.lastname = lastname;
+		return this;
+	}
+	public ContactData withAddress1(String address1) {
+		this.address1 = address1;
+		return this;
+	}
+	public ContactData withHome(String home) {
+		this.home = home;
+		return this;
+	}
+	public ContactData withMobile(String mobile) {
+		this.mobile = mobile;
+		return this;
+	}
+	public ContactData withWork(String work) {
+		this.work = work;
+		return this;
+	}
+	public ContactData withEmail1(String email1) {
+		this.email1 = email1;
+		return this;
+	}
+	public ContactData withEmail2(String email2) {
+		this.email2 = email2;
+		return this;
+	}
+	public ContactData withAddress2(String address2) {
+		this.address2 = address2;
+		return this;
+	}
+	public ContactData withPhone2(String phone2) {
+		this.phone2 = phone2;
+		return this;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public String getAddress1() {
+		return address1;
+	}
+	public String getHome() {
+		return home;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public String getWork() {
+		return work;
+	}
+	public String getEmail1() {
+		return email1;
+	}
+	public String getEmail2() {
+		return email2;
+	}
+	public String getBday() {
+		return bday;
+	}
+	public String getBmonth() {
+		return bmonth;
+	}
+	public String getByear() {
+		return byear;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public String getPhone2() {
+		return phone2;
+	}
+	
+	
 }
 		

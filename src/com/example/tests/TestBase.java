@@ -32,10 +32,10 @@ public class TestBase {
 	public Iterator<Object[]> randomValidGroupGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
 		for (int i= 0; i < 3; i++) {
-			GroupData group = new GroupData();
-			group.name = generateRandomString();
-			group.header = generateRandomString(); 
-			group.footer = generateRandomString();
+			GroupData group = new GroupData()
+				.withName(generateRandomString())
+				.withHeader(generateRandomString())
+				.withFooter(generateRandomString());
 			list.add(new Object[]{group});
 		}
 		return list.iterator();
@@ -55,25 +55,25 @@ public class TestBase {
 	public Iterator<Object[]> randomValidContactGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
 		for (int i= 0; i < 3; i++) {
-			ContactData contact = new ContactData();
-			contact.firstname = generateRandomString();
-			contact.lastname = generateRandomString();
-			contact.address1 = generateRandomString();
-			contact.home = generateRandomString();
-			contact.mobile = generateRandomString();
-			contact.work = generateRandomString();
-			contact.email1 = generateRandomString();
-			contact.email2 = generateRandomString();
+			ContactData contact = new ContactData()
+			.withFirstName(generateRandomString())
+			.withLastName(generateRandomString())
+			.withAddress1(generateRandomString())
+			.withHome(generateRandomString())
+			.withMobile(generateRandomString())
+			.withWork(generateRandomString())
+			.withEmail1(generateRandomString())
+			.withEmail2(generateRandomString())
+			.withAddress2(generateRandomString())
+			.withPhone2(generateRandomString());
 			//contact.bday = "5";
 			//contact.bmonth = "January";
 			//contact.byear = "1989";
 			//contact.group = "Freunde";
-			contact.address2 = generateRandomString();
-			contact.phone2 = generateRandomString();
 			list.add(new Object[]{contact});
 		}
 		return list.iterator();
 	}
-	
-	
+
+		
 }
