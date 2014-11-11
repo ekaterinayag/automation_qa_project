@@ -23,7 +23,7 @@ public class TestBase {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-		String configFile = System.getProperty("configFile", "application.properties");
+		String configFile = System.getProperty("configFile", "firefox.properties");
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File(configFile)));
 		app = new ApplicationManager(properties);
@@ -51,8 +51,15 @@ public class TestBase {
 		}
 		return list;
 	}
-
 	
+	public static String generateRandomString() {
+		Random rnd = new Random();
+		if (rnd.nextInt(2) == 0) {
+			return "";
+		} else {
+			return "test" + rnd.nextInt();
+		}
+	}	
 }
 	
 

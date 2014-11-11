@@ -3,13 +3,30 @@ package com.example.tests;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.example.utils.SortedListOf;
 
 public class GroupRemovalTests extends TestBase {
+
+@DataProvider
+	public Iterator<Object[]> randomValidGroupGenerator() {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (int i= 0; i < 3; i++) {
+			GroupData group = new GroupData()
+				.withName(generateRandomString())
+				.withHeader(generateRandomString())
+				.withFooter(generateRandomString());
+			list.add(new Object[]{group});
+		}
+		return list.iterator();
+	}
 	
 	@Test (dataProvider = "randomValidGroupGenerator")
 	public void deleteSomeGroup(GroupData group) {

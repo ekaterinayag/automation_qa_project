@@ -41,6 +41,7 @@ public class ContactCreation extends TestBase{
 	assertThat(newList, equalTo(oldList.withAdded(contact)));
 	
 	}
+ //new
 }
 
 

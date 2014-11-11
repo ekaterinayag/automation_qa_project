@@ -13,7 +13,7 @@ import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import com.thoughtworks.xstream.XStream;
 
-public class GroupDataGenerator {
+public class GroupDataGenerator extends TestBase {
 
 	public static void main(String[] args) throws IOException {
 		if (args.length < 3) {
@@ -95,13 +95,4 @@ public class GroupDataGenerator {
 		return list;
 	}
 	
-
-	public static String generateRandomString() {
-		Random rnd = new Random();
-		if (rnd.nextInt(2) == 0) {
-			return "";
-		} else {
-			return "test" + rnd.nextInt();
-		}
-	}
 }	

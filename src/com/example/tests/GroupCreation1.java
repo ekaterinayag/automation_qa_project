@@ -39,4 +39,6 @@ public class GroupCreation1 extends TestBase {
 	    //compare states
 	   assertThat(newList, equalTo(oldList.withAdded(group)));
 	 }
- }
+//new 
+}
+

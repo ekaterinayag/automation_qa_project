@@ -12,7 +12,7 @@ import java.util.Random;
 import com.thoughtworks.xstream.XStream;
 
 
-public class ContactDataGenerator {
+public class ContactDataGenerator extends TestBase{
 
 	public static void main(String[] args) throws IOException {
 		if (args.length < 3) {
@@ -115,12 +115,6 @@ public class ContactDataGenerator {
 		return list;
 	}
 
-	public static String generateRandomString() {
-		Random rnd = new Random();
-		if (rnd.nextInt(2) == 0) {
-			return "";
-		} else {
-			return "test" + rnd.nextInt();
-		}
-}
+	
+	
 }
