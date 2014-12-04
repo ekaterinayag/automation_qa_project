@@ -48,6 +48,19 @@ public class ContactHelper extends HelperBase {
 		
 	}
 
+	public void deleteContact() {
+		manager.getAutoItHelper()
+			.winWaitAndActivate("AddressBook Portable", "", 5000)
+			.click("TListView1")
+			.send("{DOWN}{SPACE}")
+			.click("Delete")
+			.winWaitAndActivate("Confirm", "", 5000)
+		//manager.getAutoItHelper()
+			.click("TButton2")
+			.winWaitAndActivate("AddressBook Portable", "", 5000);
+		
+	}
+
 	
 
 	
