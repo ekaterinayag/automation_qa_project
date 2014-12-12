@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+ <class name="com.example.tests.ContactData" table="addressbook">
+ <id name="id" column="id" ></id>
+ <property name="firstname" column="firstname" />
+ <property name="lastname" column="lastname" />
+ <property name="address1" column="address" />
+ <property name="home" column="home" />
+ <property name="mobile" column="mobile" />
+ <property name="work" column="work" />
+ <property name="email1" column="email" />
+ <property name="email2" column="email2" />
+ <property name="bday" column="bday" />
+ <property name="bmonth" column="bmonth" />
+ <property name="byear" column="byear" />
+ <property name="address2" column="address2" />
+ <property name="phone2" column="phone2" />
+ 	
+ <set name="com.example.tests.ContactData" table="address_in_groups" inverse="true">
+ <key column ="id"/>
+ 	<many-to-many column = "id" class="com.example.tests.ContactData"/>
+ </set>
+ <set name="com.example.tests.GroupData" table="group_list" inverse="true">	
+ 	<key column ="group_id"/>
+ 	<many-to-many column = "group_id" class="com.example.tests.GroupData"/>
+ </set>
+ <property name="group" column="group_name" />
+ </class>
+</hibernate-mapping>

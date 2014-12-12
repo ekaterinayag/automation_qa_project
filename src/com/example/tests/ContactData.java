@@ -3,6 +3,7 @@ package com.example.tests;
 import org.openqa.selenium.WebElement;
 
 public class ContactData implements Comparable<ContactData> {
+	private String id;
 	private String firstname;
 	private String lastname;
 	private String address1;
@@ -101,6 +102,11 @@ public class ContactData implements Comparable<ContactData> {
 			return 0;
 			}
 	
+	public ContactData withID(String id) {
+		this.id = id;
+		return this;
+	}
+	
 	public ContactData withFirstName(String firstname) {
 		this.firstname = firstname;
 		return this;
@@ -108,6 +114,18 @@ public class ContactData implements Comparable<ContactData> {
 	public ContactData withLastName(String lastname) {
 		this.lastname = lastname;
 		return this;
+	}
+	public String getId() {
+		return id;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public String getGroup() {
+		return group;
 	}
 	public ContactData withAddress1(String address1) {
 		this.address1 = address1;
@@ -141,10 +159,10 @@ public class ContactData implements Comparable<ContactData> {
 		this.phone2 = phone2;
 		return this;
 	}
-	public String getFirstname() {
+	public String getFirstName() {
 		return firstname;
 	}
-	public String getLastname() {
+	public String getLastName() {
 		return lastname;
 	}
 	public String getAddress1() {
@@ -179,6 +197,51 @@ public class ContactData implements Comparable<ContactData> {
 	}
 	public String getPhone2() {
 		return phone2;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+	public void setHome(String home) {
+		this.home = home;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public void setWork(String work) {
+		this.work = work;
+	}
+	public void setEmail1(String email1) {
+		this.email1 = email1;
+	}
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+	public void setBday(String bday) {
+		this.bday = bday;
+	}
+	public void setBmonth(String bmonth) {
+		this.bmonth = bmonth;
+	}
+	public void setByear(String byear) {
+		this.byear = byear;
+	}
+	public void setGroup(String group) {
+		this.group = group;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
 	}
 	
 	
