@@ -43,7 +43,8 @@ public class ContactRemovalTests extends TestBase {
 		public void deleteSomeContact(ContactData contact) {
 						
 			//save old state
-			SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList 
+		   = new SortedListOf<ContactData>(app.getHibernateHelper().listContacts());
 		   
 			//at least one contact should exist!
 		    Random rnd = new Random();
