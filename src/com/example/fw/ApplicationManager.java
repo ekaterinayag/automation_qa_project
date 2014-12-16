@@ -19,13 +19,20 @@ public class ApplicationManager {
 	private Properties properties;
 	private HibernateHelper hibernateHelper;
 	
+	private ApplicationModel model;
+	
 	public ApplicationManager(Properties properties) {
 		this.properties = properties;
-    
+		model = new ApplicationModel();
+		model.setGroups(getHibernateHelper().listGroups());
 	}
 	
 	public void stop() {
 		driver.quit();
+	}
+	
+	public ApplicationModel getModel() {
+		return model;
 	}
 
 	public NavigationHelper navigateTo() {
@@ -80,5 +87,8 @@ public class ApplicationManager {
 		return driver;
 	}
 
+	public String getProperty(String key) {
+		return properties.getProperty(key);
+	}
 	
 }

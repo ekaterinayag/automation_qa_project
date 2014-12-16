@@ -18,7 +18,7 @@ public class GroupRemovalTests extends TestBase {
 @DataProvider
 	public Iterator<Object[]> randomValidGroupGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i= 0; i < 3; i++) {
+		for (int i= 0; i < 5; i++) {
 			GroupData group = new GroupData()
 				.withName(generateRandomString())
 				.withHeader(generateRandomString())
@@ -32,7 +32,7 @@ public class GroupRemovalTests extends TestBase {
 	public void deleteSomeGroup(GroupData group) {
 			    
 	  //save old state
-		SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
+		SortedListOf<GroupData> oldList = app.getGroupHelper().getUiGroups();
 	    
 	    //at least one group should exist!
 	    Random rnd = new Random();
@@ -43,7 +43,7 @@ public class GroupRemovalTests extends TestBase {
 		app.getGroupHelper().deleteGroup(index);
 			
 		//save new state
-		SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+		SortedListOf<GroupData> newList = app.getGroupHelper().getUiGroups();
 	    
 	    //compare states
 		assertThat(newList, equalTo(oldList.without(index)));
